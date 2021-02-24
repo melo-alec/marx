@@ -40,7 +40,7 @@ jobs:
       - run: ls dist/marx-editor/
       - name: Change the directory
         working-directory: ./dist/marx-editor
-        run: npm pack && npm publish
+        run: npm version 0.0.2 && npm pack && npm publish
       - run: pwd 
       - run: ls
       # - run: npm pack && npm publish
