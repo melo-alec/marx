@@ -30,9 +30,9 @@ jobs:
       # - run: echo "//registry.npmjs.org/:_authToken=2f934392-639b-4117-a388-3cd60bf4f053" > ~/.npmrc
       # - run: cat ~/.npmrc
     
-        env: # More info about the environment variables in the README
-            GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }} # Leave this as is, it's automatically generated
-            NPM_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }} 
+        # env: # More info about the environment variables in the README
+        #     GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }} # Leave this as is, it's automatically generated
+        #     NPM_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }} 
 
       - run: npm i
       - run: npm run build-prod
