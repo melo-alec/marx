@@ -27,7 +27,6 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-          registry-url: https://registry.npmjs.org/
-          token: ed2ee00d-87bd-4e04-a514-8d6866a2d0f1
-      - run: npm install && npm publish
+      - run: echo "//registry.npmjs.org/:_authToken=ed2ee00d-87bd-4e04-a514-8d6866a2d0f1" > ~/.npmrc
+      - run: npm publish
 
