@@ -27,5 +27,7 @@ jobs:
 
       # Runs NPM Publish
       - name: NPM Publish
-        uses: JS-DevTools/npm-publish@v1
+        uses: JS-DevTools/npm-publish
+        with:
+             token: ed2ee00d-87bd-4e04-a514-8d6866a2d0f1
 
