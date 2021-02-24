@@ -38,11 +38,12 @@ jobs:
       - run: npm run build-prod
       - run: ls -a
       - run: ls dist/marx-editor/
-      - run: chmod -R 777 dist/*
-      - run: cd dist/marx-editor/*
+      - name: Change the directory
+        working-directory: ./dist/marx-editor
+        run: npm pack && npm publish
       - run: pwd 
       - run: ls
-      - run: npm pack && npm publish
+      # - run: npm pack && npm publish
       # - run: echo "//registry.npmjs.org/:_authToken=ed2ee00d-87bd-4e04-a514-8d6866a2d0f1" > ~/.npmrc
      
 
