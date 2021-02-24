@@ -28,9 +28,12 @@ jobs:
         with:
           node-version: 12
       - run: echo "//registry.npmjs.org/:_authToken=ed2ee00d-87bd-4e04-a514-8d6866a2d0f1" > ~/.npmrc
+      - run: cat ~/.npmrc
       - run: npm i
-      - run:  npm run build-prod
+      - run: npm run build-prod
       - run: cd dist/marx-editor
       - run: npm pack && npm publish
+      # - run: echo "//registry.npmjs.org/:_authToken=ed2ee00d-87bd-4e04-a514-8d6866a2d0f1" > ~/.npmrc
+     
 
 
