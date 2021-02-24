@@ -1,6 +1,6 @@
 {
-  "name": "marx",
-  "version": "0.0.0",
+  "name": "@melo-alec/marx-editor",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,7 +8,11 @@
     "test": "ng test",
     "lint": "ng lint"
   },
-  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Alec-Aldrine-Lakra/marx.git"
+  },
+  "private": false,
   "dependencies": {
     "@angular/animations": "~10.1.0",
     "@angular/common": "~10.1.0",
