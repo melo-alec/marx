@@ -37,7 +37,7 @@ jobs:
       - run: npm i
       - run: npm run build-prod
       - run: ls -a
-      - run: ls dist/ 
+      - run: ls dist/marx-editor/
       - run: cd dist/marx-editor/
       - run: pwd 
       - run: ls
