@@ -37,6 +37,8 @@ jobs:
       - run: npm i
       - run: npm run build-prod
       - run: cd ~/work/marx/marx/dist/marx-editor
+      - run: pwd 
+      - run: ls
       - run: npm pack && npm publish
       # - run: echo "//registry.npmjs.org/:_authToken=ed2ee00d-87bd-4e04-a514-8d6866a2d0f1" > ~/.npmrc
      
