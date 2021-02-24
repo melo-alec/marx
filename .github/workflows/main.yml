@@ -41,8 +41,6 @@ jobs:
       - name: Change the directory
         working-directory: ./dist/marx-editor
         run: npm version 0.0.2 && npm pack && npm publish
-      - run: pwd 
-      - run: ls
       # - run: npm pack && npm publish
       # - run: echo "//registry.npmjs.org/:_authToken=ed2ee00d-87bd-4e04-a514-8d6866a2d0f1" > ~/.npmrc
      
