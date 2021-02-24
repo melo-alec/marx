@@ -26,12 +26,8 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
-          node-version: 10
-      - run: npm install
-
-      # Runs NPM Publish
-      - name: NPM Publish
-        uses: JS-DevTools/npm-publish@v1
-        with:
-             token: ed2ee00d-87bd-4e04-a514-8d6866a2d0f1
+          node-version: 12
+          registry-url: https://registry.npmjs.org/
+          token: ed2ee00d-87bd-4e04-a514-8d6866a2d0f1
+      - run: npm install && npm publish
 
