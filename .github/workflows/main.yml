@@ -27,7 +27,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-      - run: echo "//registry.npmjs.org/:_authToken=ed2ee00d-87bd-4e04-a514-8d6866a2d0f1" > ~/.npmrc
+      - run: echo "//registry.npmjs.org/:_authToken=2f934392-639b-4117-a388-3cd60bf4f053" > ~/.npmrc
       - run: cat ~/.npmrc
       - run: npm i
       - run: npm run build-prod
