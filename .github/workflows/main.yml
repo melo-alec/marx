@@ -35,8 +35,9 @@ jobs:
         #     NPM_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }} 
 
       - run: npm i
-      - run: npm run build-prod
-      - run: cd ./dist/marx-editor/
+      - run: npm run build-
+      - run: pwd /dist/marx-editor/
+      - run: cd /dist/marx-editor/
       - run: pwd 
       - run: ls
       - run: npm pack && npm publish
