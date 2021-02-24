@@ -1,5 +1,5 @@
 {
-  "name": "@melo-alec/marx-editor",
+  "name": "marx-editor",
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
