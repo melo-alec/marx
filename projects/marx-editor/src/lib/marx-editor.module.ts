@@ -4,12 +4,14 @@ import { EditorMenuComponent } from '../editor-menu/editor-menu.component';
 import { ToolsModule } from '../tools/tools.module';
 import { MentionModule } from 'angular-mentions';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from "@angular/common";
 @NgModule({
   declarations: [MarxEditorComponent, EditorMenuComponent],
   imports: [
     ToolsModule,
     MentionModule,
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   exports: [MarxEditorComponent]
 })
