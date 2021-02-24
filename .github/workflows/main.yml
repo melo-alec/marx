@@ -34,8 +34,8 @@ jobs:
         #     GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }} # Leave this as is, it's automatically generated
         #     NPM_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }} 
 
-      # - run: npm i
-      # - run: npm run build-prod
+      - run: npm i
+      - run: npm run build-prod
       - run: ls -a
       - run: cd /dist/marx-editor/
       - run: pwd 
