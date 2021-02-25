@@ -631,7 +631,8 @@ const template = `<div class="editor-menu" (click)="buttonClicked($event)">
             </div>
         </div>
 
-        <div class="child-row" *ngIf="!moreOptionsButton">
+        <!-- *ngIf="!moreOptionsButton" -->
+        <div class="child-row">
             <!-- Quote -->
             <div class="col" data-id="quote">
                 <button data-id="quote" [csTooltip]="'Quote'" placement="bottom" delay="0" type="black" [class.active]="toolbarConfig?.quote"

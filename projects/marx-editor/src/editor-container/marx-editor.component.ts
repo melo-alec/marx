@@ -61,7 +61,7 @@ export class MarxEditorComponent implements OnInit, OnChanges, AfterViewInit, On
   fontColor: string;
   backgroundColor: string;
   clicked = false;
-  morebutton = false;
+  moreOptionsButton: boolean;
   populateFlag: number;
 
   constructor() {
@@ -173,13 +173,6 @@ export class MarxEditorComponent implements OnInit, OnChanges, AfterViewInit, On
 
   ngOnInit(): void {
     this.sel = window.getSelection();
-    setTimeout(() => {
-      if (this.editorContainer.nativeElement.offsetWidth > 500) {
-        this.morebutton = false;
-      } else {
-        this.morebutton = true;
-      }
-    }, 5);
   }
 
   ngAfterViewInit(): void {
@@ -188,7 +181,9 @@ export class MarxEditorComponent implements OnInit, OnChanges, AfterViewInit, On
       this.selectionChange.bind(this),
       false
     );
-
+    if (this.editorContainer.nativeElement.offsetWidth < 600) {
+      this.moreOptionsButton = true;
+    }
   }
   immageResize() {
     const imageWidth = document.getElementById('contentimage').offsetWidth;
@@ -290,7 +285,7 @@ export class MarxEditorComponent implements OnInit, OnChanges, AfterViewInit, On
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.editorConfig && this.editorConfig) {
       this.placeholder = this.editorConfig?.placeholder ?? 'Please Add Some Text';
-
+      this.id = this.editorConfig?.id ?? this.id;
       this.mentionConfig = {};
       if (
         Array.isArray(this.editorConfig?.mentionedNames) &&
