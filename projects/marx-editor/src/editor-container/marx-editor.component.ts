@@ -143,19 +143,18 @@ export class MarxEditorComponent implements OnInit, OnChanges, AfterViewInit, On
   onTouch: any = () => { };
 
   set htmlVal(html) {
-   
     if (html !== null && html !== undefined && this.html !== html) {
       this.html = html;
-      if(this.populateFlag === 0 && document.getElementById(this.id)) {
-        ++this.populateFlag;
-        document.getElementById(this.id).innerHTML = this.html;
-      }
       this.onChange(html);
       this.onTouch(html);
     }
   }
 
-  writeValue(value: any): void {
+  writeValue(value: string): void {
+    if(this.populateFlag === 0 && document.getElementById(this.id)) {
+      ++this.populateFlag;
+      document.getElementById(this.id).innerHTML = value ?? '';
+    }
     this.htmlVal = value;
   }
 
@@ -446,6 +445,7 @@ export class MarxEditorComponent implements OnInit, OnChanges, AfterViewInit, On
       range.setStartAfter(input);
       this.sel.addRange(range);
       this.tribute = '';
+      this.writeValue(document.getElementById(`${this.id}`).innerHTML);
     }
   }
 
