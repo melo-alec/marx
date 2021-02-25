@@ -49,7 +49,6 @@ export class MarxEditorComponent implements OnInit, OnChanges, AfterViewInit, On
   node: any;
   tribute: string;
   flag: number;
-  placeholder: string;
   mentionConfig: any;
   mentionid: number | string;
   mentionedNames: { id: number; name: string }[];
@@ -68,7 +67,6 @@ export class MarxEditorComponent implements OnInit, OnChanges, AfterViewInit, On
     this.fontColor = 'black';
     this.backgroundColor = 'white';
     this.toolbarPlacement = 'bottom';
-    this.placeholder = '';
     this.id = nanoid();
     this.populateFlag = 0;
     this.resetToolbar();
@@ -283,7 +281,6 @@ export class MarxEditorComponent implements OnInit, OnChanges, AfterViewInit, On
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.editorConfig && this.editorConfig) {
-      this.placeholder = this.editorConfig?.placeholder ?? 'Please Add Some Text';
       this.id = this.editorConfig?.id ?? this.id;
       this.mentionConfig = {};
       if (

@@ -3,7 +3,7 @@ const template = `<div class="editor-container" (blur)="blur()" #editorContainer
                             [class.bottom]="!editorConfig?.toolbarPlacement || editorConfig?.toolbarPlacement === 'bottom'"
                             [class.top]="editorConfig?.toolbarPlacement === 'top'" [id]="id" (input)="setValue($event.target.innerText)"
                             (paste)="onPaste($event)" [mentionConfig]="mentionConfig" (closed)="mentionClosed()"
-                            [attr.placeholder]="placeholder">
+                            [attr.placeholder]="editorConfig?.placeholder">
                         </div>
                         <div class="editor-tools"
                             [class.bottom]="!editorConfig?.toolbarPlacement || editorConfig?.toolbarPlacement === 'bottom'"
