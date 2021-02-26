@@ -3,5 +3,10 @@
   "dest": "../../dist/marx-editor",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "whitelistedNonPeerDependencies": [
+    "tslib",
+    "angular-mentions",
+    "nanoid"
+  ]
 }
