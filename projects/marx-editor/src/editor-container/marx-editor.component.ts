@@ -49,7 +49,7 @@ export class MarxEditorComponent implements OnInit, OnChanges, AfterViewInit, On
   node: any;
   tribute: string;
   flag: number;
-  mentionConfig: any;
+  mentionConfig: { mentions: any[] };
   mentionid: number | string;
   mentionedNames: { id: number; name: string }[];
   mentionedDates: string[];
@@ -70,6 +70,9 @@ export class MarxEditorComponent implements OnInit, OnChanges, AfterViewInit, On
     this.id = nanoid();
     this.populateFlag = 0;
     this.resetToolbar();
+    this.mentionConfig = {
+      mentions: []
+    };
   }
 
 
@@ -282,20 +285,16 @@ export class MarxEditorComponent implements OnInit, OnChanges, AfterViewInit, On
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.editorConfig && this.editorConfig) {
       this.id = this.editorConfig?.id ?? this.id;
-      this.mentionConfig = {};
-      if (
-        Array.isArray(this.editorConfig?.mentionedNames) &&
-        this.editorConfig?.mentionedNames.length > 0
-      ) {
-        this.editorConfig.mentionedNames = this.editorConfig?.mentionedNames.filter(
-          (item: { id: number; name: string }) => {
+      this.mentionConfig = {
+        mentions: []
+      };
+      if (Array.isArray(this.editorConfig?.mentionedNames) && this.editorConfig?.mentionedNames.length > 0) {
+        this.editorConfig.mentionedNames = this.editorConfig?.mentionedNames.filter((item: { id: number; name: string }) => {
             if (item.id !== 0 && item.name.trim() !== '') {
               return item;
             }
-          }
-        );
+        });
 
-        this.mentionConfig.mentions = [];
         this.mentionConfig.mentions.push({
           items: this.editorConfig.mentionedNames,
           triggerChar: '@',
@@ -310,10 +309,7 @@ export class MarxEditorComponent implements OnInit, OnChanges, AfterViewInit, On
           dropUp: true,
         });
       }
-      if (
-        Array.isArray(this.editorConfig?.mentionedDates) &&
-        this.editorConfig?.mentionedDates.length > 0
-      ) {
+      if ( Array.isArray(this.editorConfig?.mentionedDates) && this.editorConfig?.mentionedDates.length > 0) {
         this.editorConfig.mentionedDates = [
           ...new Set(this.editorConfig?.mentionedDates),
         ];
@@ -412,6 +408,9 @@ export class MarxEditorComponent implements OnInit, OnChanges, AfterViewInit, On
       this.startOffset = this.sel.getRangeAt(0).startOffset;
     }
 
+    if(this.populateFlag === 0) {
+      ++this.populateFlag;
+    }
     this.writeValue(document.getElementById(`${this.id}`).innerHTML);
   }
 
