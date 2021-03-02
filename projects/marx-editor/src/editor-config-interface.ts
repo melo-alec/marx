@@ -7,7 +7,8 @@ export interface EditorConfig {
     buttonName?: string;
     toolbarPlacement?: 'top' | 'bottom';
     placeholder?: string;
-    mode?: 'basic' | 'prime'
+    mode?: 'basic' | 'prime';
+    disabledButton?: boolean;
 }
 
 export interface MentionedName {

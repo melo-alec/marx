@@ -409,7 +409,7 @@ const template = `<div class="editor-menu" (click)="buttonClicked($event)">
                     <div class="link">
                         <label>Web Address</label>
                         <input [(ngModel)]="linkUrl" type="text" placeholder="https://exampleimage.com">
-                        <span class="error" *ngIf="invalidUrlMessage">{{invalidUrlMessage}}</span>
+                        <p class="error" *ngIf="invalidUrlMessage">{{invalidUrlMessage}}</p>
                     </div>
                     <div class="link">
                         <label>Display Text</label>
@@ -729,8 +729,8 @@ const template = `<div class="editor-menu" (click)="buttonClicked($event)">
             </button>
         </div>
         <!-- Button Name -->
-        <div class="col" data-id="submit" *ngIf="editorConfig?.buttonName">
-            <button class="submit" data-id="submit">{{editorConfig?.buttonName}}</button>
+        <div class="col" *ngIf="editorConfig?.buttonName">
+            <button class="submit" data-id="submit" [class.disabled]="editorConfig?.disabledButton">{{editorConfig?.buttonName}}</button>
         </div>
     </div>
 </div>`
