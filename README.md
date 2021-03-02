@@ -19,7 +19,7 @@ Add the module to your app.module imports:
     @NgModule({
         imports: [ MarxEditorModule ],
         ...
-    })
+    }) 
 
 Simply include the marx-editor within your component template file 
 
