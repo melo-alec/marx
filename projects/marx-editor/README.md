@@ -36,11 +36,11 @@ The following optional configuration items can be used.
 
 | Option           | Type                                        | Description 
 | ---              | ---                                         | ---        
-| mode             | 'basic' | 'prime'                           | Optional field that specifies the mode of the editor you want to use, by default the editor runs in basic mode
+| mode             | 'basic' or 'prime'                          | Optional field that specifies the mode of the editor you want to use, by default the editor runs in basic mode
 | file             | boolean                                     | Optional field to enable or disable file upload option inside the editor. |
 | id               | string                                      | Optional field to add a unique id for each instance of editor, by default each instance of editor created has a unique id |
 | placeholder      | string                                      | Optional field to display a message when editor is empty. |
-| toolbarPlacement | 'top' | 'bottom'                            | Optional field to diplay the toolbar at the top or bottom, by default the toolbar is placed at the bottom |
+| toolbarPlacement | 'top' or 'bottom'                           | Optional field to diplay the toolbar at the top or bottom, by default the toolbar is placed at the bottom |
 | colorPalette     | boolean                                     | Optional field to enable or disable font and text-background color options in toolbar. |
 | buttonName       | string                                      | Optional field to display a submit button in the editor toolbar that emits all the editor html data on click |
 | buttonDisabled   | boolean                                     | Optional field to enable or disable the submit button that is present in the toolbar |
