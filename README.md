@@ -12,13 +12,33 @@ Add the package as a dependency to your project using:
 
 Add the module to your app.module imports:
 
-   import { MarxEditorModule } from 'marx-editor';
-    ...
-
-    @NgModule({
-        imports: [ MarxEditorModule ],
+    ``` typescript
+        import { MarxEditorModule } from 'marx-editor';
         ...
-    })
+
+        @NgModule({
+            imports: [ MarxEditorModule ],
+            ...
+        })
+    ```
+
+Simply include the marx-editor withing your component template file 
+
+    ``` html
+        <marx-editor></marx-editor>
+    ```
+
+Optional Configurations
+
+     ``` html
+        <marx-editor 
+            [editorConfig]="<configuration object>" 
+            [(ngModel)]="<two way binding variable>"
+            (comment)="<function which will receive the editor data as event>"
+            (sendSavedFiles)="<function which will receive the files uploaded (array of files) as event>">
+        </marx-editor>
+    ```
+
 
 The editor operates in two modes i.e 'basic' and 'prime'. The prime mode contains all the text formatting options like font-color, text-background color, font-size,
 text-alignment, font-style like h1, h2, h3 and paragraph tags, and font-families like verdana, arial, georgia, impact, courier new, tahoma
@@ -33,6 +53,8 @@ The following optional configuration items can be used.
 
 
 #### Keys within the editorConfig object
+
+The following optional keys can be used
 
 | Option           | Type                                        | Description 
 | ---              | ---                                         | ---        
