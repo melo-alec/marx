@@ -2,7 +2,7 @@
 
 Marx  was created in the memory of late Karl Heinrich Marx (1818 - 1883). 
 This is a small tribute to honour his writings including the legendary book "The Communist Manifesto".
-A wysiwyg editor with blend in styles, formatting, font families and everything needed to make your rich text edit smoother
+A wysiwyg editor with blend in styles, formatting, font families and everything needed to make your rich text edit experience euphoric
 
 
 ## Usage
@@ -21,7 +21,7 @@ Add the module to your app.module imports:
         ...
     })
 
-Simply include the marx-editor withing your component template file 
+Simply include the marx-editor within your component template file 
 
     <marx-editor></marx-editor>
 
