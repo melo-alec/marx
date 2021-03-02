@@ -1,7 +1,8 @@
 # Marx
 
-Marx Editor was created in the memory of late Karl Heinrich Marx (1818 - 1883). 
-This is a small tribute to honour his writings including the legendary book "The Communist Manifesto"
+Marx  was created in the memory of late Karl Heinrich Marx (1818 - 1883). 
+This is a small tribute to honour his writings including the legendary book "The Communist Manifesto".
+A wysiwyg editor with blend in styles, formatting, font families and everything needed to make your rich text edit smoother
 
 
 ## Usage
@@ -12,32 +13,26 @@ Add the package as a dependency to your project using:
 
 Add the module to your app.module imports:
 
-    ``` typescript
-        import { MarxEditorModule } from 'marx-editor';
-        ...
+    import { MarxEditorModule } from 'marx-editor';
+    ...
 
-        @NgModule({
-            imports: [ MarxEditorModule ],
-            ...
-        })
-    ```
+    @NgModule({
+        imports: [ MarxEditorModule ],
+        ...
+    })
 
 Simply include the marx-editor withing your component template file 
 
-    ``` html
-        <marx-editor></marx-editor>
-    ```
+    <marx-editor></marx-editor>
 
 Optional Configurations
 
-     ``` html
-        <marx-editor 
-            [editorConfig]="<configuration object>" 
-            [(ngModel)]="<two way binding variable>"
-            (comment)="<function which will receive the editor data as event>"
-            (sendSavedFiles)="<function which will receive the files uploaded (array of files) as event>">
-        </marx-editor>
-    ```
+    <marx-editor 
+        [editorConfig]="<configuration object>" 
+        [(ngModel)]="<two way binding variable>"
+        (comment)="<function which will receive the editor data as event>"
+        (sendSavedFiles)="<function which will receive the files uploaded (array of files) as event>">
+    </marx-editor>
 
 
 The editor operates in two modes i.e 'basic' and 'prime'. The prime mode contains all the text formatting options like font-color, text-background color, font-size,
