@@ -20,6 +20,8 @@ Add the module to your app.module imports:
         ...
     })
 
+The editor operates in two modes i.e 'basic' and 'prime'. The prime mode contains all the text formatting options like font-color, text-background color, font-size,
+text-alignment, font-style like h1, h2, h3 and paragraph tags, and font-families like verdana, arial, georgia, impact, courier new, tahoma
 ### Configuration Options
 
 The following optional configuration items can be used.
@@ -33,7 +35,8 @@ The following optional configuration items can be used.
 #### Keys within the editorConfig object
 
 | Option           | Type                             | Description 
-| ---              | ---                              | ---         
+| ---              | ---                              | ---        
+| mode             | 'basic' | 'prime'                | Optional field that specifies the mode of the editor you want to use, by default the editor runs in basic mode
 | file             | boolean                          | Optional field to enable or disable file upload option inside the editor. |
 | id               | string                           | Optional field to add a unique id for each instance of editor, by default each instance of editor created has a unique id |
 | placeholder      | string                           | Optional field to display a message when editor is empty. |
@@ -45,6 +48,8 @@ The following optional configuration items can be used.
                      [{id: number, name: string}, ...] | Optional field to add tributes inside the editor and trigger a list of names with @ button in toolbar or keyboard @ button |
 | mentionedDates   | Array i.e
                      ['12/1/2020', '11/2/2021',....]   | Optional field to add tributes inside the editor and trigger a list of dates with the # button in the toolbar or keyboard # button |
+
+
 
 #### Output Events
 
